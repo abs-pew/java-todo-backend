@@ -1,7 +1,8 @@
 import axios from "axios";
 import type {Todo} from "./Todo.ts";
-import TodoCard from "./TodoCard.tsx";
 import {useEffect, useState} from "react";
+import TodoColumn from "./TodoColumn.tsx";
+import {allPossibleTodos, type TodoStatus} from "./TodoStatus.ts";
 
 
 function App() {
@@ -21,24 +22,22 @@ function App() {
         )
     }
 
-
-
-    const toDosList:Todo[] = [
-        {
-            id: "TD01",
-            description: "collect requirements",
-            status : "OPEN"
-        },
-        {
-            id: "TD02",
-            description: "document requirements",
-            status : "OPEN"
-        }
-    ]
   return (
     <>
-        <h1> TODOs </h1>
-        {todos.map(todo => <TodoCard key= {todo.id} todo={todo}/>)}
+        <h1 className={"h1"}> TODOs </h1>
+<div className={"grid"}>
+    {
+        allPossibleTodos.
+        map(
+            (status:TodoStatus) => {
+                const filteredTodos = todos.filter(todo => todo.status === status)
+                return (<TodoColumn status={status} todos={filteredTodos}/>)}
+        )
+    }
+</div>
+
+
+
     </>
   )
 }

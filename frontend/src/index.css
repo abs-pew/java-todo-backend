@@ -1,6 +1,32 @@
-body{
+body {
     font-family: "Times New Roman" ;
 }
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.grid > :nth-child(3n + 1) {
+    background-color: red; /* Column 1 cells */
+}
+
+.grid > :nth-child(3n + 2) {
+    background-color: orange; /* Column 2 cells */
+}
+
+.grid > :nth-child(3n + 3) {
+    background-color: green; /* Column 3 cells */
+}
+
+.h1 {
+    grid-column: 1 / -1;
+    background: gray;
+    text-align: center;
+}
+
 .todo-card
 {
     border: solid 2px black;
@@ -9,4 +35,5 @@ body{
     width: 200px;
     margin-bottom: 10px;
     padding: 20px;
+    margin-left: 5px;
 }
