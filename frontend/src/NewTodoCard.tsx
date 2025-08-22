@@ -27,7 +27,7 @@ export default function NewTodoCard(props: Props) {
     }
 
     return (
-        <div className={"todo-card new-todo"}>
+        <div className={"todo-card"}>
             {<input value={text} type="text" onInput={CaptureText} placeholder={"Add description for new Todo here .."}/>}
             <button hidden={(text.trim()==="") ? true : false} onClick={saveTodo}> Save</button>
         </div>
