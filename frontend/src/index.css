@@ -10,15 +10,15 @@ body {
 }
 
 .grid > :nth-child(3n + 1) {
-    background-color: red; /* Column 1 cells */
+    background-color: lightgreen; /* Column 1 cells */
 }
 
 .grid > :nth-child(3n + 2) {
-    background-color: orange; /* Column 2 cells */
+    background-color: lightgoldenrodyellow; /* Column 2 cells */
 }
 
 .grid > :nth-child(3n + 3) {
-    background-color: green; /* Column 3 cells */
+    background-color: lightcoral; /* Column 3 cells */
 }
 
 .h1 {
@@ -32,8 +32,27 @@ body {
     border: solid 2px black;
     border-radius: 10px;
     height: 50px;
-    width: 200px;
     margin-bottom: 10px;
     padding: 20px;
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.todo-card.new-todo
+{
+display: grid;
+}
+.todo-card.new-todo input
+{
+    border: solid black;
+    width: 100%;
+    height: 60%;
+    border-width: 0 0 2px 0;
+    padding: 0;
+    gap: 2px
+}
+
+.todo-card.new-todo button
+{
+    justify-self: end;
 }

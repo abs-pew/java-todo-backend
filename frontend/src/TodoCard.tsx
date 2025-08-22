@@ -8,10 +8,6 @@ export default function TodoCard(props :  Props) {
     return (
         <div className={"todo-card"}>
             {props.todo.description}
-            <br/>
-            {props.todo.status}
-            <br/>
-            <br/>
         </div>
     );
 }

@@ -9,11 +9,15 @@ function App() {
 
     const [todos, setTodos] = useState<Todo[]>()
 
-    useEffect(() => {
+    function getAllTodos(){
         axios.get("api/todo")
             .then(response => {
                 setTodos(response.data)
             })
+    }
+
+    useEffect(() => {
+        getAllTodos()
     }, [])
 
     if (!todos) {
@@ -31,7 +35,7 @@ function App() {
         map(
             (status:TodoStatus) => {
                 const filteredTodos = todos.filter(todo => todo.status === status)
-                return (<TodoColumn status={status} todos={filteredTodos}/>)}
+                return (<TodoColumn status={status} todos={filteredTodos} getAllTodos={getAllTodos}/>)}
         )
     }
 </div>
