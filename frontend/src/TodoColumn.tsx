@@ -11,7 +11,7 @@ type Props = {
 export default function TodoColumn(props : Props) {
     return (
         <div>
-            <h2 align={"center"}> {props.status}</h2>
+            <h2> {props.status}</h2>
             {props.todos.map((todo : Todo) => <TodoCard todo={todo} key={todo.id} getAllTodos={props.getAllTodos}/>)}
 
             {

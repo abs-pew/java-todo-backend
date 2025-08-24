@@ -1,4 +1,4 @@
-import TodoStatus from "./TodoStatus.ts";
+import type {TodoStatus} from "./TodoStatus.ts";
 
 export type Todo = {
     id: string,

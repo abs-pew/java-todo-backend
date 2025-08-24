@@ -32,25 +32,34 @@ body {
     display: grid;
     border: solid 2px black;
     border-radius: 10px;
-    height: 50px;
     margin-bottom: 10px;
+    height: 70px;
     padding: 20px;
     margin-left: 10px;
     margin-right: 10px;
     gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.todo-card.new-todo input
+.todo-card input
 {
+    grid-column: 1 / -1;
     border: solid black;
     width: 100%;
-    height: 60%;
+    height: 100%;
     border-width: 0 0 2px 0;
     padding: 0;
     gap: 2px
 }
 
+.todo-card.new-todo
+{
+    grid-template-columns: inherit;
+}
+
 .todo-card button
 {
-    justify-self: end;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+    min-width: 80px;
 }

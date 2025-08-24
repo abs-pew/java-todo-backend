@@ -35,7 +35,7 @@ function App() {
         map(
             (status:TodoStatus) => {
                 const filteredTodos = todos.filter(todo => todo.status === status)
-                return (<TodoColumn status={status} todos={filteredTodos} getAllTodos={getAllTodos}/>)}
+                return (<TodoColumn key={status} status={status} todos={filteredTodos} getAllTodos={getAllTodos}/>)}
         )
     }
 </div>
